@@ -1,0 +1,204 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --ink: #15202b;
+  --muted: #6f7782;
+  --line: #d0d7de;
+  --accent: #159447;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.page-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.page-header p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+main {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.worksheet-panel {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.ghost-btn {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+dl {
+  margin: 0;
+}
+
+dl div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+dt {
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  text-align: right;
+}
+
+.kanban-shell {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.backlog-btn {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.5rem 0.8rem;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap: 0.75rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+
+.column {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.column-header {
+  margin: 0;
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-list {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  min-height: 220px;
+  transition: background 0.2s ease;
+}
+
+.column-list.drop-target {
+  background: #eef6ff;
+}
+
+.kanban-card {
+  background: #fff;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  padding: 0.6rem;
+  cursor: grab;
+}
+
+.kanban-card.dragging {
+  opacity: 0.45;
+}
+
+.kanban-card.done {
+  background: #d6f0d7;
+}
+
+.work-id {
+  margin: 0;
+  font-weight: 700;
+}
+
+.work-ref,
+.work-owner,
+.work-customer,
+.work-mrn {
+  margin: 0.35rem 0;
+  font-weight: 400;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  background: #dbeafe;
+  color: #123;
+  border-radius: 12px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1100px) {
+  .worksheet-panel {
+    grid-template-columns: 1fr;
+  }
+}

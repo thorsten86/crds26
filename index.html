@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Workflow Kanban</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>BOH Import Team</h1>
+      <p>Open any card to view its invoice/worksheet details. Drag cards between columns to update status.</p>
+    </header>
+
+    <main>
+      <section id="details-panel" class="worksheet-panel hidden" aria-label="Invoice and worksheet summary" aria-live="polite">
+        <article class="invoice-details card">
+          <div class="card-title-row">
+            <h2>Invoice Details</h2>
+            <button id="close-details" class="ghost-btn" type="button">Close</button>
+          </div>
+          <dl id="invoice-details-list"></dl>
+        </article>
+
+        <article class="worksheet card">
+          <h2>Worksheet Values</h2>
+          <dl id="worksheet-values-list"></dl>
+
+          <h3>Entry Values</h3>
+          <dl id="entry-values-list"></dl>
+        </article>
+
+        <article class="worksheet card">
+          <h2>Worksheet Lines</h2>
+          <dl id="worksheet-lines-list"></dl>
+
+          <h3>Entry Lines</h3>
+          <dl id="entry-lines-list"></dl>
+        </article>
+      </section>
+
+      <section class="kanban-shell" aria-label="Kanban board">
+        <div class="kanban-header">
+          <h2>Board</h2>
+          <button type="button" class="backlog-btn">View as backlog</button>
+        </div>
+        <div id="kanban-board" class="kanban-board"></div>
+      </section>
+    </main>
+
+    <template id="card-template">
+      <article class="kanban-card" draggable="true">
+        <p class="work-id"></p>
+        <h4 class="work-ref"></h4>
+        <p class="work-owner"></p>
+        <p class="work-customer"></p>
+        <p class="work-mrn"></p>
+        <div class="tags"></div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
