@@ -1,0 +1,33 @@
+.field-label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.875rem;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgb(16 185 129 / 0.15);
+}
+
+.column-list.drop-target {
+  background: #e2e8f0;
+}
+
+.kanban-card.dragging {
+  opacity: 0.45;
+}
+
+.kanban-card.done {
+  background: #dcfce7;
+  border-color: #86efac;
+}
