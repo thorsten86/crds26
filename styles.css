@@ -39,6 +39,10 @@ main {
   gap: 1rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .worksheet-panel {
   display: grid;
   gap: 1rem;
@@ -52,9 +56,24 @@ main {
   padding: 1rem;
 }
 
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 h2,
 h3 {
   margin-top: 0;
+}
+
+.ghost-btn {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
 }
 
 dl {
@@ -126,6 +145,12 @@ dd {
   display: grid;
   gap: 0.6rem;
   padding: 0.6rem;
+  min-height: 220px;
+  transition: background 0.2s ease;
+}
+
+.column-list.drop-target {
+  background: #eef6ff;
 }
 
 .kanban-card {
@@ -134,6 +159,11 @@ dd {
   border-radius: 6px;
   border: 1px solid var(--line);
   padding: 0.6rem;
+  cursor: grab;
+}
+
+.kanban-card.dragging {
+  opacity: 0.45;
 }
 
 .kanban-card.done {
